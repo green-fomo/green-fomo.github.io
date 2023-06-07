@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <!-- CSS  -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+  <link rel="stylesheet" href="css/main.css" media="screen,projection">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+</head>
+
+<body>
+
+<!-- <div class="top-strip"></div> -->
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/"></a>
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <div class="navbar-collapse collapse" id="navbar-main">
+      <ul class="nav navbar-nav">
+        <li><a href="#UDA">UDA</a></li>
+        <li><a href="#SSDA">SSDA</a></li>
+        <li><a href="#UniDA">UniDA</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="container">
+  <div class="page-content">
+      <p><br /></p>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <center><h1>GeoNet Challenge Details</h1></center>
+          <center><h2>ICCV 2023 Workshop</h2></center>
+          <!-- <center>June 25, 2021</center> -->
+        </div>
+      </div>
+
+<hr />
+
+<div class="row">
+    <p>
+        The primary objective of the 1st GeoNet challenge is to encourage participants to put forward their ideas and algorithms aimed at addressing the issue of geographical bias by utilizing our recently introduced dataset, GeoNet. The competition consists of three distinct tracks, each focusing on different settings popular in modern domain adaptation.
+    </p>
+</div>
+
+
+<p><br /></p>
+<div class="row" id="geonet">
+  <div class="col-xs-12">
+    <h2><u>Overview of GeoNet dataset</u></h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <p>
+        To address the urgent need of evaluating geographical robustness of vision models, we recently created a large-scale dataset called GeoNet which contains images from US and Asia domains covering the tasks of scene recognition (GeoPlaces) and object recognition (GeoImnet). Our benchmark for place recognition, GeoPlaces, is sourced from the popular Places-205 dataset after segregating the images with respect to their geographies. It has more than 700k images in total across 205 categories. Similarly, the benchmark for object classification, GeoImnet, is built using images collected from the WebVision dataset. It consists of over 600k images across USA and Asia domains covering 700 categories. A key facet of this dataset is that the data is collected from the web, which means that label-npoise is a prominent issue, along with cross-geography domain shifts. Please refer to our CVPR 2023 <a href="https://tarun005.github.io/GeoNet/">paper</a> for more details about our dataset. We envision GeoNet to provide a suitable testbed for the community to enable development of geographically robust learning algorithms. Furthermore, we also aim to spur discussion on fairness and inclusivity from the perspective of under-represented geographies. All the participants should use data only from GeoNet for the challenge.
+    </p>
+  </div>
+</div>
+
+<p><br /></p>
+<div class="row" id="rules">
+  <div class="col-xs-12">
+    <h2><u>General Guidelines</u></h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <ul>
+        <li> Participants can only utilize ImageNet-1k data for pre-training their models and the provided GeoNet data during training and adaptation. However, the use of external data is strictly prohibited. This includes the collection or annotation of new data related to the target geographies. If you need any clarifications, please feel free to contact the organizers. </li>
+
+        <li> The winners of the challenge will be invited to present their winning solution during the workshop. Additionally, they will also be required to submit a brief report summarizing their solution, and a working code and trained models for fariness and reproduciblity. </li>
+
+        <li> The winners will be selected based on the leaderboard performance, with separate winners for the three challenge tracks.   </li>
+
+        <li> <b>Metrics:</b>  </li>
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+      </div>
+    </div>
+
+  </body>
+</html>

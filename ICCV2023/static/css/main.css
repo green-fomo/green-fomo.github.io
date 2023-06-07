@@ -15,6 +15,25 @@ body {
   .container {
     max-width: 980px;
   }
+
+  .containerheading {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+
+  .transparent-image {
+    opacity: 0.5
+  }
+
+  /* Centered text */
+  .centered {
+    position: absolute;
+    width: 800px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
   
   .top-strip {
     background-color: #000;

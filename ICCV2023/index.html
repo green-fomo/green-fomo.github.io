@@ -41,7 +41,7 @@
 
   <body>
 
-    <!-- <div class="top-strip"></div> -->
+<!-- <div class="top-strip"></div> -->
 <div class="navbar navbar-default navbar-fixed-top">
   <div class="container">
     
@@ -57,8 +57,10 @@
     <div class="navbar-collapse collapse" id="navbar-main">
       <ul class="nav navbar-nav">
         <li><a href="#intro">Introduction</a></li>
-        <li><a href="#schedule">Schedule</a></li>
+        <li><a href="#challenge">Challenge</a></li>
+        <li><a href="#dates">Dates</a></li>
         <li><a href="#speakers">Invited Speakers</a></li>
+        <li><a href="#schedule">Schedule</a></li>
         <li><a href="#organizers">Organizers</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -67,17 +69,15 @@
   </div>
 </div>
 
+<div class="container">
+  <div class="page-content">
+      <p><br /></p>
 
-    <div class="container">
-      <div class="page-content">
-          <p><br /></p>
-<div class="row">
-  <div class="col-xs-12">
-    <center><h1>1st Workshop on Robust Computer Vision Across Geographies</h1></center>
-    <center><h2>ICCV 2023 Workshop</h2></center>
-    <!-- <center>June 25, 2021</center> -->
-  </div>
+<div class="containerheading">
+    <img src="static/img/site/intro.png">
 </div>
+
+
 
 <hr />
 
@@ -90,7 +90,7 @@
 
 <!-- <div class="row" id="intro">  
     <div>  
-    <img src="static/img/site/teaser.jpg" style="width: 100%; height: auto;"/>
+    <img src="static/img/site/intro_pic.png" style="width: 100%; height: auto;"/>
   </div>
 </div> -->
 
@@ -106,55 +106,41 @@
 
 
 <p><br /></p>
-<div class="row" id="cfp">
+<div class="row" id="intro">
   <div class="col-xs-12">
-    <h2>Introduction</h2>
+    <h2><u>Introduction</u></h2>
   </div>
 </div>
 <div class="row">
   <div class="col-xs-12">
     <p>
-      This is the first workshop on domain adaptation and robust learning across geographies in computer vision. As part of this workshop, we aim to bring together researchers from across the vision community to foster discussions on the spectrum of challenges posed by geographic bias towards fair and inlcusive computer vision, and the pathway towards building geographically transferable and robust models that counter such biases enabling effective deployment of modern AI technology in low and mid-income societies. 
-      
-      
-      <!-- In recent years, domain adaptation has emerged as an effective technique to alleviate dataset bias during training and improve transferability of vision models to sparsely labeled target domains. However, the geographic origin of data remains a significant source of bias, attributable to several factors of variation between train and test data. Training on geographically biased datasets may cause a model to learn the idiosyncrasies of their geographies, preventing generalization to novel domains with significantly different geographic and demographic composition. Besides robustness, this may have deep impact towards fair and inclusive computer vision. 
-
-      This is the first workshop on natural language and 3D-oriented object understanding of real-world scenes. Our primary goal is to spark research interest in this emerging area, and we set two objectives to achieve this. Our first objective is to bring together researchers interested in natural language and object representations of the physical world. This way, we hope to foster a multidisciplinary and broad discussion on how humans use language to communicate about different aspects of objects present in their surrounding 3D environments. The second objective is to benchmark progress in connecting language to 3D to identify and localize 3D objects with natural language. Tapping on the recently introduced large-scale datasets of <b>ScanRefer</b> and <b>ReferIt3D</b>, we host two benchmark challenges on language-assisted <i>3D localization and identification tasks</i>. The workshop consists of presentations by experts in the field and short talks regarding methods addressing the benchmark challenges designed to highlight the emerging open problems in this area. -->
+      This is the first workshop on domain adaptation and robust learning across geographies in computer vision. This workshop aims to unite researchers from across the vision community to foster discussions on the spectrum of challenges posed by geographic bias towards fair and inclusive computer vision. Our primary objective is to facilitate discussions and ideas that enable effective deployment of modern AI technology in low and mid-income societies through the design of geographically robust and transferable models that counter such biases. As part of this workshop, we are also conducting a challenge to benchmark progress in learning geographically robust classification models designed to highlight the emerging open problems in this area. Tapping on the recently introduced large-scale geographic adaptation dataset <b>GeoNet</b>, we host three challenges on <i>unsupervised domain adaptation</i>, <i>single source domain generalization</i> and <i>universal domain adaptation</i>. The workshop consists of presentations by experts in the field and short talks regarding methods that successfully address the challenges.
     </p>
   </div>
 </div>
 
 <p><br /></p>
-<div class="row" id="cfp">
+<div class="row" id="challenge">
   <div class="col-xs-12">
-    <h2>Challenges</h2>
+    <h2><u>1st GeoNet Challenge on Geographical Robustness</u></h2>
   </div>
 </div>
 <div class="row">
   <div class="col-xs-12">
     <p>
-      GeoNet robustness challenge details coming soon!
+      The 1st GeoNet challenge contains three tracks, aimed at tackling different problems in geographical robustness. All the tracks will use the recently proposed GeoNet dataset for training and validation. Test set will be separately released later. More details about the challenge, inlcuding general rules and guidelines, are presented <a href="static/challenge_bak.html">on the challenge page</a>.
     </p>
-    <!-- <ul>      
-
+    <ol>      
       <li>
-        <strong>3D Object Localization</strong>: to predict a bounding box in a 3D scene corresponding to an object described in natural language
+        <strong>Unsupervised Domain Adaptation</strong>: is targeted to improve accuracy on an unlabeled target geography using labeled images from a different source geography.
       </li>      
       <li>
-        <strong>Fine-grained 3D Object Identification</strong>: to identify a referred object among multiple objects in a 3D scene given natural or spatial-based language
+        <strong>Single Source Domain Generalization</strong>:, where the task is to leverage images from a specific source geography and generalize well to unseen test geographies.
       </li>
-    </ul> -->
-
-    <!-- <div class="row" id="tasks">
-      <div class="col-md-6">
-        <img src="static/img/site/localization.jpg" height="180px"/>
-        <p>3D Object Localization</p>
-      </div>
-      <div class="col-md-6">
-        <img src="static/img/site/identification.png" height="180px"/>
-        <p>Fine-grained 3D Object Identification</p>
-      </div>
-    </div> -->
+      <li>
+        <strong>Universal Domain Adaptation</strong>:, where the aim is to generalize to the target domain with unlabeled samples during training and novel categories at test-time, while using labels from a separate source geography.
+      </li>
+    </ol>
 
     <!-- <p>
       The challenge leaderboard is online. If you want to join the challenge, see more details here:
@@ -173,121 +159,77 @@
 <p><br /></p>
 <div class="row" id="dates">
   <div class="col-xs-12">
-    <h2>Important Dates</h2>
+    <h2><u>Important Dates</u></h2>
   </div>
 </div>
 <div class="row">
   <div class="col-xs-12">
     <table class="table table-striped">
       <tbody>
-        <!-- <tr>
-          <td>ScanRefer Challenge Submission Deadline</td>
-          <td><strike>May 31 2021</strike></td>
+        <tr>
+          <td>Challenge Data Released</td>
+          <!-- <td><strike>June 15 2023</strike></td> -->
+          <td> June 15, 2023 </td>
         </tr>
         <tr>
-          <td>Notification to ScanRefer Challenge Winner</td>
-          <td><strike>June 1 2021</td>
+          <td>Challenge Test Set Released</td>
+          <td>August 1, 2023</td>
         </tr>
         <tr>
-          <td>ReferIt3D Challenge Submission Deadline</td>
-          <td><strike>June 11 2021</strike></td>
+          <td>Submission Portal Open</td>
+          <td>Aug 10, 2023</td>
         </tr>
         <tr>
-          <td>Notification to ReferIt3D Challenge Winner</td>
-          <td><strike>June 12 2021</strike></td>
+          <td>Challenge Submission Deadline</td>
+          <td>Aug 20, 2023</td>
         </tr>
         <tr>
           <td>Workshop Date</td>
-          <td><strike>June 25 2021 (<span style="background-color:lightcoral;">Day 7 of CVPR 2021</span>)</strike></td>
-        </tr> -->
-        <tr>
-          Coming Soon!
+          <!-- <td><strike>June 25 2021 (<span style="background-color:lightcoral;">Day 7 of CVPR 2021</span>)</strike></td> -->
+          <td>Oct 2, 2023 (<span style="background-color:lightcoral;">Day 1 of ICCV 2023</span>)</td>
         </tr>
       </tbody>
     </table>
   </div>
 </div>
 
-<p><br /></p>
-<div class="row" id="schedule">
-  <div class="col-xs-12">
-    <h2>Schedule (Pacific Time Zone)</h2>
-  </div>
-</div>
-<div class="row">
-  <div class="col-xs-12">
-     <table class="table table-striped">
-      <tbody>
-        <!-- <tr><td>TBD</td><td>TBD</td></tr> -->
-        <!-- <tr>
-          <td>Welcome and Introduction</td>
-          <td>12:00 - 12:10</td>
-        </tr>
-        <tr>
-          <td><i>From Disembodied to Embodied Grounded Language</i> (<strong>Dhruv Batra</strong>)</td>
-          <td>12:10 - 12:40</td>
-        </tr>
-        <tr>
-          <td><i>Generating Animated Videos of Human Activities from Natural Language Descriptions</i> (<strong>Raymond Mooney</strong>)</td>
-          <td>12:40 - 13:10</td>
-        </tr>
-        <tr>
-          <td>Winner Talk for ScanRefer</td>
-          <td>13:10 - 13:20</td>
-        </tr>
-        <tr>
-          <td><i>Affordances for Action in 3D Spaces</i> (<b>Kristen Grauman</b>)</td>
-          <td>13:20 - 13:50</td>
-        </tr>
-        <tr>
-          <td>Break </td>
-          <td>13:50 - 14:20</td>
-        </tr>
-        <tr>
-          <td><i>The Semantics and Pragmatics of Reference to 3D Objects</i> (<b>Noah Goodman</b>)</td>
-          <td>14:20 - 14:50</td>
-        </tr>
-        <tr>
-          <td>Winner Talk for ReferIt3D</td>
-          <td>14:50 - 15:00</td>
-        </tr>
-        <tr>
-          <td><i>Language Grounding Using Neural 3D Scene Representations</i> (<strong>Katerina Fragkiadaki</strong>)</td>
-          <td>15:00 - 15:30</td>
-        </tr>
-        <tr>
-          <td>Panel Discussion and Conclusion</td>
-          <td>15:30 - 16:00</td>
-        </tr> -->
-        Coming Soon!
-      </tbody>
-    </table>
-  </div>
-</div>
+<!-- <div class="row"> -->
+      <!-- <div class="col-md-24">
+        <figure>
+          <img src="static/img/site/intro_pic.png" >
+          </figure>
+      </div> -->
+      <!-- <div class="col-md-6">
+        <img src="static/img/site/identification.png" height="180px"/>
+        <p>Fine-grained 3D Object Identification</p>
+      </div> -->
+    <!-- </div> -->
 
 <p><br /></p>
 <div class="row" id="speakers">
   <div class="col-xs-12">
-    <h2>Invited Speakers</h2>
+    <h2><u>Invited Speakers</u></h2>
   </div>
 </div>
 
 <p><br /></p>
 <div class="row">
   <div class="col-md-2">
-    <a href="https://www.cs.utexas.edu/users/grauman/" target="_blank"><img class="people-pic" style="float:left;margin-right:50px;" src="static/img/people/grauman.jpg" /></a>
+    <a href="https://www.cs.utexas.edu/users/grauman/" target="_blank"><img class="people-pic" style="float:left;margin-right:50px;" src="static/img/people/grauman.png" /></a>
   </div>
   <div class="col-md-10">
     <p>
       <b><a href="https://www.cs.utexas.edu/users/grauman/">Dr. Kristen Grauman</a></b> is a Professor in the Department of Computer Science at the University of Texas at Austin. Her primary research interests are visual recognition and
-      visual search and she is well-known for her pioneering works on large-scale image/video retrieval, active learning, active recognition, first-person "egocentric" computer vision, multimodal learning, activity recognition, vision and language, and video summarization. She has also recently led a team of researchers worldwide towards developing a plane-scale egocentric video dataset called Ego4D, which had a significant influence on the landscape of egocentric computer vision.
+      visual search and she is well-known for her pioneering works on large-scale image/video retrieval, active learning, active recognition, first-person "egocentric" computer vision, multimodal learning, activity recognition, vision and language, and video summarization. She has also recently led a team of researchers worldwide towards developing a planet-scale egocentric video dataset called Ego4D, which had a significant influence on the landscape of egocentric computer vision.
     </p>
   </div>
 </div>
 
+<p><br /></p>
+
 <div class="row">
   <div class="col-md-2">
-    <a href="https://faculty.cc.gatech.edu/~judy/" target="_blank"><img class="people-pic" style="float:left;margin-right:50px;" src="static/img/people/hoffman.jpg"/></a>
+    <a href="https://faculty.cc.gatech.edu/~judy/" target="_blank"><img class="people-pic" style="float:left;margin-right:50px;" src="static/img/people/hoffman-modified.png"/></a>
   </div>
   <div class="col-md-10">
     <p>
@@ -300,19 +242,20 @@
 
 <div class="row">
   <div class="col-md-2">
-    <a href="http://www.cs.columbia.edu/~vondrick/" target="_blank"><img class="people-pic" style="float:left;margin-right:50px;" src="static/img/people/vondrick.jpg" /></a>
+    <a href="http://www.cs.columbia.edu/~vondrick/" target="_blank"><img class="people-pic" style="float:left;margin-right:50px;" src="static/img/people/vondrick.png" /></a>
   </div>
   <div class="col-md-10">
     <p>
-      <b><a href="http://www.cs.columbia.edu/~vondrick/"> Dr Carl Vondrick </a></b> is an associate professor of computer science at Columbia University. His research focuses on computer vision and machine learning. His research is supported by the NSF, DARPA, Amazon, and Toyota, and his work has appeared on the national news, such as CNN, NPR, the Associated Press and Stephen Colbert's television show. He received the 2021 NSF CAREER Award, the 2021 Toyota Young Faculty Award, and the 2018 Amazon Research Award. Previously, he was a Research Scientist at Google and he received his PhD from MIT in 2017. 
+      <b><a href="http://www.cs.columbia.edu/~vondrick/"> Dr. Carl Vondrick </a></b> is an associate professor of computer science at Columbia University. His research focuses on computer vision and machine learning. His research is supported by the NSF, DARPA, Amazon, and Toyota, and his work has appeared on the national news, such as CNN, NPR, the Associated Press and Stephen Colbert's television show. He received the 2021 NSF CAREER Award, the 2021 Toyota Young Faculty Award, and the 2018 Amazon Research Award. Previously, he was a Research Scientist at Google and he received his PhD from MIT in 2017. 
     </p>
   </div>
 </div>
 
 <p><br /></p>
+
 <div class="row">
   <div class="col-md-2">
-    <a href="https://beerys.github.io/" target="_blank"><img class="people-pic" style="float:left;margin-right:50px;" src="static/img/people/sara.jpeg" /></a>
+    <a href="https://beerys.github.io/" target="_blank"><img class="people-pic" style="float:left;margin-right:50px;" src="static/img/people/sara.png" /></a>
   </div>
   <div class="col-md-10">
     <p>
@@ -320,9 +263,73 @@
     </p>
   </div>
 </div>
+
 <p><br /></p>
 
-  
+<div class="row">
+  <div class="col-md-2">
+    <a href="https://www.microsoft.com/en-us/research/people/gtadesse/" target="_blank"><img class="people-pic" style="float:left;margin-right:50px;" src="static/img/people/tadesse.png" /></a>
+  </div>
+  <div class="col-md-10">
+    <p>
+      <b><a href="https://www.microsoft.com/en-us/research/people/gtadesse/"> Dr. Girmaw Abebe Tadesse </a></b> is a Principal Research Scientist and Manager at Microsoft AI for Good Research Lab which aims to develop AI solutions for critical problems across sectors including agriculture, healthcare, biodiversity, etc. Previously at IBM Research Africa, Girmaw led multiple projects in trustworthy AI including evaluation of generative models, representation analysis in academic materials and data-driven insight extraction from public healthy surveys, with active collaborations with external institutions such as Bill & Melinda Gates Foundation, Stanford University, Oxford University and Harvard University. He has interned/worked in various research groups across Europe, including the UPC-BarcelonaTech (Spain), KU Leuven (Belgium), and INESC-ID (Portugal). 
+    </p>
+  </div>
+</div>
+
+<p><br /></p>
+</div>
+
+<p><br /></p>
+<div class="row" id="schedule">
+  <div class="col-xs-12">
+    <h2><u>Schedule ( Central European Time )</u></h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+     <table class="table table-striped">
+      <tbody>
+        <!-- <tr><td>TBD</td><td>TBD</td></tr> -->
+        <tr>
+          <td>Welcome and Introduction</td>
+          <td>08:30 - 08:40</td>
+        </tr>
+        <tr>
+          <td><i>Keynote Talk 1</i> </td>
+          <td>08:40 - 09:15</td>
+        </tr>
+        <tr>
+          <td><i>Keynote Talk 2</i> </td>
+          <td>09:15 - 09:50</td>
+        </tr>
+        <tr>
+          <td>Winner Talks</td>
+          <td>09:50 - 10:30</td>
+        </tr>
+        <tr>
+          <td>Break</td>
+          <td>10:30 - 10:40</td>
+        </tr>
+        <tr>
+          <td><i>Keynote Talk 3</i> </td>
+          <td>10:40 - 11:15</td>
+        </tr>
+        <tr>
+          <td><i>Keynote Talk 4</i> </td>
+          <td>11:15 - 11:50</td>
+        </tr>
+        <tr>
+          <td><i>Keynote Talk 5</i> </td>
+          <td>11:50 - 12:25</td>
+        </tr>
+        <tr>
+          <td>Conclusion</td>
+          <td>12:25 - 12:30</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 
 
@@ -335,7 +342,7 @@
 </div>
 
 <div class="row">
-  <div class="col-xs-2">
+  <div class="col-xs-3">
     <a href="https://tarun005.github.io/" target="_blank">
       <img class="people-pic" src="static/img/people/tarun.png" />
     </a>
@@ -345,7 +352,7 @@
     </div>
   </div>
 
-  <div class="col-xs-2">
+  <div class="col-xs-3">
     <a href="https://yuyingyeh.github.io/" target="_blank">
       <img class="people-pic" src="static/img/people/YuYing.png" />
     </a>
@@ -355,9 +362,9 @@
     </div>
   </div>
 
-  <div class="col-xs-2">
+  <div class="col-xs-3">
     <a href="https://lear.inrialpes.fr/people/alahari/" target="_blank">
-      <img class="people-pic" src="static/img/people/karteek.jpg" />
+      <img class="people-pic" src="static/img/people/karteek.png" />
     </a>
     <div class="people-name">
       <a href="https://lear.inrialpes.fr/people/alahari/" target="_blank">Karteek Alahari</a>
@@ -365,9 +372,9 @@
     </div>
   </div>
 
-  <div class="col-xs-2">
+  <div class="col-xs-3">
     <a href="https://cseweb.ucsd.edu//~mkchandraker/" target="_blank">
-      <img class="people-pic" src="static/img/people/manmohan.jpg" />
+      <img class="people-pic" src="static/img/people/manmohan.png" />
     </a>
     <div class="people-name">
       <a href="https://cseweb.ucsd.edu//~mkchandraker/" target="_blank">Manmohan Chandraker</a>
