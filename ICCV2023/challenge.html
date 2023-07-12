@@ -53,7 +53,7 @@
       <div class="row">
         <div class="col-xs-12">
           <center><h1>GeoNet Challenge Details</h1></center>
-          <center><h2>ICCV 2023 Workshop</h2></center>
+          <center><h2>ICCV 2023</h2></center>
           <!-- <center>June 25, 2021</center> -->
         </div>
       </div>
@@ -62,7 +62,7 @@
 
 <div class="row">
     <p>
-        The primary objective of the 1st GeoNet challenge is to encourage participants to put forth their ideas and algorithms aimed at addressing the issue of geographical bias by utilizing our recently introduced dataset, GeoNet. The competition consists of two different tracks, each focusing on different settings popular in modern domain adaptation. The unsupervised domain adaptation (UDA) challenge will be evaluated on both the GeoImnet and GeoPlaces datasets, while the universal domain adaptation (UniDA) challenge will be evaluated on the GeoImnet dataset.
+        The primary objective of the 1st GeoNet challenge is to encourage participants to put forth their ideas and algorithms aimed at addressing the issue of geographical bias by utilizing our recently introduced dataset, GeoNet. The competition consists of three different challenges, each focusing on different settings popular in modern domain adaptation. The unsupervised domain adaptation will be conducted on GeoPlaces and GeoImnet, while the universal domain adaptation will be held on GeoUniDA datasets.
     </p>
 </div>
 
@@ -76,11 +76,21 @@
 <div class="row">
   <div class="col-xs-12">
     <p>
-        To address the urgent need of evaluating geographical robustness of vision models, we recently created a large-scale dataset called GeoNet which contains images from US and Asia domains covering the tasks of scene recognition (GeoPlaces) and object recognition (GeoImnet). Our benchmark for place recognition, <i>GeoPlaces</i>, is sourced from the popular Places-205 dataset after segregating the images with respect to their geographies. It has more than 700k images in total across 205 categories. Similarly, the benchmark for object classification, <i>GeoImnet</i>, is built using images collected from the WebVision dataset. It consists of over 600k images across USA and Asia domains covering 700 categories. A key facet of this dataset is that the data is collected from the web, which means that label-npoise is a prominent issue, along with cross-geography domain shifts. Please refer to our CVPR 2023 <a href="https://tarun005.github.io/GeoNet/">paper</a> for more details about our dataset. We envision GeoNet to provide a suitable testbed for the community to enable development of geographically robust learning algorithms. Furthermore, we also aim to spur discussion on fairness and inclusivity from the perspective of under-represented geographies. All the participants should use data only from GeoNet for the challenge.
+        To address the need of evaluating geographical robustness of vision models, we recently created a large-scale dataset called GeoNet which contains images from US and Asia domains covering the tasks of scene recognition (GeoPlaces) and object recognition (GeoImnet). 
+        <!-- Our benchmark for place recognition, <i>GeoPlaces</i>, is sourced from the popular Places-205 dataset after segregating the images with respect to their geographies. It has more than 700k images in total across 205 categories. Similarly, the benchmark for object classification, <i>GeoImnet</i>, is built using images collected from the WebVision dataset. It consists of over 600k images across USA and Asia domains covering 700 categories.  -->
+        A key facet of this dataset is the cross-geography domain shifts, along with prominent label noise in the training data. Please refer to our CVPR 2023 <a href="https://tarun005.github.io/GeoNet/">paper</a> for more details about our dataset. We envision GeoNet to provide a suitable testbed for the community to enable development of geographically robust learning algorithms. Furthermore, we also aim to spur discussion on fairness and inclusivity from the perspective of under-represented geographies. All the participants should use data only from GeoNet for the challenge.
     </p>
 
   </div>
 </div>
+
+<center>
+  <figure>
+    <img src="static/img/site/geonet_stats.png" width=300> 
+    <figcaption style="font-family: Arial;"><b>Summary of GeoNet:</b> Number of images in train and test splits in each of our benchmarks.</figcaption>
+  </figure>
+</center>
+
 
 <p><br /></p>
 <div class="row" id="geonet">
@@ -92,7 +102,7 @@
   <div class="col-xs-12">
 
     <p style="color:brown;" align="center">
-        <i> You can download the dataset  <a href="https://drive.google.com/drive/folders/1x2R1AlCaww7VIrYupCxxGZdkm4nVqFLE?usp=sharing" target="_blank">here</a> </i>. The code for training baseline models on GeoNet is also available at <a href="https://github.com/ViLab-UCSD/GeoNet" target="_blank"> this link</a>
+        <i> You can download the dataset  <a href="https://drive.google.com/drive/folders/1x2R1AlCaww7VIrYupCxxGZdkm4nVqFLE?usp=sharing" target="_blank">here</a> </i>. The code for training baseline models on GeoNet is available at <a href="https://github.com/ViLab-UCSD/GeoNet" target="_blank"> this link.</a>
     </p>
 
   </div>
@@ -108,92 +118,101 @@
 <div class="row">
   <div class="col-xs-12">
     <ul>
-        <li> <b> Unsupervised Domain Adaptation (UDA): </b> In this challenge, the participants have to devise novel methods for improving performance on target geography which has only unlabeled data during training, by accessing labeled data from a different source geography. For the purpose of this challenge, the source domain is fixed as <i>USA</i> and the target as <i>Asia</i> domains. Therefore, the task is to leverage the labeled images from the USA split from the GeoNet dataset and improve performance on the Asia images, from which several unlabeled images are also provided. The participants cannot use the labels from the Asia images during training. 
-
+        <li> <b> Unsupervised Domain Adaptation (UDA) on GeoPlaces: </b> In this challenge, the participants have to devise novel unsupervised domain adaptation methods for improving performance on the task of place recognition across geographies. For the purpose of this challenge, the source domain is fixed as <i>USA</i> and the target as <i>Asia</i> domains. Therefore, the task is to leverage the labeled images from the USA split from the GeoPlaces dataset and improve performance on the Asia images, from which several unlabeled images are also provided. The participants cannot use the labels from the Asia images during training. 
             <ul>
-                <li><b>Dataset Overview: </b> For the UDA task, the GeoPlaces dataset contains around 178k images from USA domain (labeled data) and 187k images from Asia domain (unlabeled data) from 205 categories. The GeoImnet dataset contains 154k images from USA domain (labeled data) and 68k images from Asia domain (unlabeled data) from 600 categories. In this UDA challenge, participants are <i>not allowed</i> to use the labels from the target domain for training their models.
-
-                <p><br /></p>
-                
-                <table class="table table-striped" style="margin: auto;">
-                <tbody>
-                    <tr>
-                      <th style="text-align: center;"><strong>Split</strong></th>
-                      <th style="text-align: center;"><strong>Data</strong></th>
-                    </tr>
-                    <tr>
-                      <td style="text-align: center;">GeoPlaces</td>
-                      <td style="text-align: center;"><a href="https://drive.google.com/file/d/1VeMkGu2kyqRHPSe0Gg7c4qJMdSZUtteS/view?usp=drive_link" style="color: blue;">Link</a></td>
-                    </tr>
-                    <tr>
-                      <td style="text-align: center;">GeoImnet</td>
-                      <td style="text-align: center;"><a href="https://drive.google.com/file/d/1XA3g9KuPjKIsVDHahm0T2Wv4_SXL19iV/view?usp=drive_link" style="color: blue;">Link</a></td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center;">Metadata</td>
-                        <td style="text-align: center;"><a href="https://drive.google.com/file/d/17FGPEPztzc3sIW3TUIl8VpsDF9TxuW6R/view?usp=drive_link" style="color: blue;">GeoPlaces</a>, <a href="https://drive.google.com/file/d/1cqBh6PoiSAeruKzzIp2R3FK4jHQHYc0c/view?usp=drive_link" style="color: blue;">GeoImnet</a></td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center;">Test data</td>
-                        <td style="text-align: center;"><a href="" style="color: blue;">To be released!</a></td>
-                    </tr>
-                </tbody>
-                </table>
+                <li><b>Dataset Download Links: </b> 
                   
-                </li>
-
-                <p><br /></p>
-
-                <li><b>Evaluation Metric:</b> For the UDA challenge, the models will be ranked based on the average Top-3 accuracy on <i> unseen test set </i> from GeoPlaces and the GeoImnet datasets.  The test images will be publicly released later in the challenge. Owing to the label noise and possible equivalent labels in the dataset, we are using Top-3 accuracy and not Top-1 accuracy for this challenge. </li>
-
-                <p><br /></p>
-
-            </ul>
-        
-        </li>        
-
-        <li> <b>Universal Domain Adaptation (UniDA):</b> Universal Domain Adaptation (UniDA) facilitates domain adaptation between source and target domains that have few private classes, in addition to shared classes which are common to both. Our proposed GeoNet dataset gives us an unique opportunity to design benchmarks for UniDA such that the private categories from the source and the target are a natural reflection of the presence or absence of these categories in the respective geographical domains. In this challenge, participants will have to use labeled data from a USA domain as the source, and Asia domain as the target, with an additional challenge that the label spaces do not completely overlap. 
-
-            <ul>
-                <li><b>Dataset Overview:</b>  The UniDA split of GeoNet is derived solely for GeoImnet. It contains 100k images from USA domain across 200 classes, and more than 34k images from target domain from unknown number of classes. At test-time, the images from Asia domain might be derived from categories unseen during training from either domain, where the task is to correctly classify seen classes while rejecting unseen classes.
-
-                <p><br /></p>
-                
-                <table class="table table-striped" style="margin: auto;">
+                <center>
+                <table class="table table-striped" style="width: 50%; margin: auto;">
                 <tbody>
-                    <tr>
-                      <th style="text-align: center;"><strong>Split</strong></th>
-                      <th style="text-align: center;"><strong>Data</strong></th>
-                    </tr>
-                    <tr>
-                      <td style="text-align: center;">GeoImnet-UniDA</td>
-                      <td style="text-align: center;"><a href="https://drive.google.com/file/d/10hoPOQN7LpLQwlTh7SPk22iGvJbYjnSK/view?usp=drive_link" style="color: blue;">Link</a></td>
-                    </tr>
-                    <!-- <tr>
-                        <td style="text-align: center;">Metadata</td>
-                        <td style="text-align: center;"><a href="https://drive.google.com/file/d/17FGPEPztzc3sIW3TUIl8VpsDF9TxuW6R/view?usp=drive_link" style="color: blue;">GeoPlaces</a>, <a href="https://drive.google.com/file/d/1cqBh6PoiSAeruKzzIp2R3FK4jHQHYc0c/view?usp=drive_link" style="color: blue;">GeoImnet</a></td>
-                    </tr> -->
-                    <tr>
-                        <td style="text-align: center;">Test data</td>
-                        <td style="text-align: center;"><a href="" style="color: blue;">To be released!</a></td>
-                    </tr>
-                </tbody>
+                  <tr>
+                    <th style="text-align: center;" colspan="3">UDA on GeoPlaces</th>
+                  </tr>
+                  <tr>
+                    <th style="text-align: center;">Images</th>
+                    <th style="text-align: center;">Metadata</th>
+                    <th style="text-align: center;">Test Data</th>
+                  </tr>
+                  <tr>
+                    <td style="text-align: center;"><a href="https://drive.google.com/file/d/1VeMkGu2kyqRHPSe0Gg7c4qJMdSZUtteS/view?usp=drive_link" style="color: blue;">Link</a></td>
+                    <td style="text-align: center;"><a href="https://drive.google.com/file/d/17FGPEPztzc3sIW3TUIl8VpsDF9TxuW6R/view?usp=drive_link" style="color: blue;">Link</a></td>
+                    <td style="text-align: center;">Unseen</td>
+                  </tr>
+                  </tbody>
                 </table>
-                
-                </li> 
-
-                <p><br /></p>
-
-                <li><b>Evaluation Metric </b> : Following prior work in OpenSet-DA, we use H-acc metric to rank the models for the UniDA task. The H-acc metric is the harmonic mean of the closet-set accuracy (over the seen classes) and the binary open-set accuracy (of rejecting the outlier target test-samples). The H-acc will be evaluated on the unseen test set, which will be publicly released later in the challenge.
-                    </li>
-                    <p><br /></p>
-                    <figure>
-                        <img src="static/img/site/formula.png" width="200">
-                    </figure>
-                 <p><br /></p>
+              </center>
             </ul>
-        
         </li>
+        
+        <p><br /></p>            
+        <li> <b> Unsupervised Domain Adaptation (UDA) on GeoImNet: </b> In this challenge, the participants have to devise novel unsupervised domain adaptation methods for improving performance on the task of image classification across geographies, where the categories span several objects, places, living organisms etc. For the purpose of this challenge, the source domain is fixed as <i>USA</i> and the target as <i>Asia</i> domains. As with UDA on GeoPlaces, the task is to leverage the labeled images from the USA split from the GeoPlaces dataset and improve performance on the Asia images, from which unlabeled images would be provided. The participants cannot use the labels from the Asia images during training. 
+              <ul>
+                  <li><b>Dataset Download Links: </b> 
+                    
+                  <center>
+                  <table class="table table-striped" style="width: 50%; margin: auto;">
+                  <tbody>
+                    <tr>
+                      <th style="text-align: center;" colspan="3">UDA on GeoImNet</th>
+                    </tr>
+                    <tr>
+                      <th style="text-align: center;">Images</th>
+                      <th style="text-align: center;">Metadata</th>
+                      <th style="text-align: center;">Test Data</th>
+                    </tr>
+                    <tr>
+                      <td style="text-align: center;"><a href="https://drive.google.com/file/d/1XA3g9KuPjKIsVDHahm0T2Wv4_SXL19iV/view?usp=drive_link" style="color: blue;">Link</a></td>
+                      <td style="text-align: center;"><a href="https://drive.google.com/file/d/1cqBh6PoiSAeruKzzIp2R3FK4jHQHYc0c/view?usp=drive_link" style="color: blue;">Link</a></td>
+                      <td style="text-align: center;">Unseen</td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </center>
+              </ul>
+          
+              <p><br /></p>    
+        <li> <b> Universal Domain Adaptation (UniDA): </b> Universal Domain Adaptation (UniDA) facilitates domain adaptation between source and target domains that have few private classes, in addition to shared classes which are common to both. 
+          <!-- Our proposed GeoNet dataset gives us an unique opportunity to design benchmarks for UniDA such that the private categories from the source and the target are a natural reflection of the presence or absence of these categories in the respective geographical domains.  -->
+          In this challenge, participants will have to use labeled data from a labeled USA domain as the source, and unlabeled Asia domain as the target, with an additional challenge that the label spaces do not completely overlap during training and testing. 
+                <ul>
+                    <li><b>Dataset Download Links: </b> 
+                      
+                    <center>
+                    <table class="table table-striped" style="width: 50%; margin: auto;">
+                    <tbody>
+                      <tr>
+                        <th style="text-align: center;" colspan="2">UniDA on GeoUniDA</th>
+                      </tr>
+                      <tr>
+                        <th style="text-align: center;">Images</th>
+                        <!-- <th style="text-align: center;">Metadata</th> -->
+                        <th style="text-align: center;">Test Data</th>
+                      </tr>
+                      <tr>
+                        <td rowspan="2" style="text-align: center;"><a href="https://drive.google.com/file/d/10hoPOQN7LpLQwlTh7SPk22iGvJbYjnSK/view?usp=drive_link" style="color: blue;">Link</a></td>
+                        <!-- <td rowspan="2" style="text-align: center;"><a href="https://drive.google.com/file/d/1cqBh6PoiSAeruKzzIp2R3FK4jHQHYc0c/view?usp=drive_link" style="color: blue;">Link</a></td> -->
+                        <td style="text-align: center;">Unseen</td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </center>
+                </ul>
+                <p><br /></p>     
+                  
+        </li>
+
+            <li>
+              <b>Evaluation Metrics:</b> For the UDA challenges on GeoPlaces and GeoImnet, the models will be ranked based on the average Top-3 accuracy on <i> unseen test set </i> from respective tasks. Owing to the label noise and possible equivalent labels in the dataset, we are using Top-3 accuracy and not Top-1 accuracy for this challenge. For the GeoUniDA challenge, following prior work in OpenSet-DA, we use H-acc metric to rank the models for the UniDA task. The H-acc metric is the harmonic mean of the closet-set accuracy (over the seen classes) and the binary open-set accuracy (of rejecting the outlier target test-samples). The H-acc will be evaluated on the unseen test set.
+            </li>
+            <p><br /></p>
+            <center>
+              <figure>
+                <img src="static/img/site/formula.png" width="200">
+            </figure>
+            </center>
+          <p><br /></p>
+            There will be separate leaderboards for all three challenges, and the participants can submit their entries to one or more of them. The test images will be publicly released later in the challenge. </li>
+
     </ul>
   </div>
 </div>
@@ -229,7 +248,7 @@
 <div class="row">
   <div class="col-xs-12">
     <ul>
-        TBD!
+        TBD
     </ul>
   </div>
 </div>

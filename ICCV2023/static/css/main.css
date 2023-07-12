@@ -40,6 +40,13 @@ body {
     height: 0.25em;
     width: 100%;
   }
+
+  .center-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
   
   h1,h2,h3 {
     color: #1a1a1a;
