@@ -260,14 +260,45 @@
 </div>
 <div class="row">
   <div class="col-xs-12">
+
+    <p>
+      <b>Model Sizes and Data Policy:</b>
+    </p>
     <ul>
-        <li> Participants can only utilize data from ImageNet-1k for pre-training their models and the provided GeoNet data during training and adaptation. Use of any other kinds of external data is strictly prohibited, which includes the collection or annotation of new data related to the target geographies. If you need any clarifications, please feel free to contact the organizers. </li>
+        <li> 
+          Participants can only utilize data from ImageNet-1k for pre-training their models and the provided GeoNet data during training and adaptation. Use of any other kinds of external data, either for pre-training or fine-tuning, is strictly prohibited, which includes the collection or annotation of new data related to the target geographies. If you need any clarifications, please feel free to contact the organizers. 
+        </li>
 
-        <li> The winners of the challenge will be invited to present their winning solution during the workshop. Additionally, they will also be required to submit a brief report summarizing their solution, and a working code and trained models for fariness and reproduciblity. </li>
+        <li>
+          The participants are allowed to use the metadata (except the labels!) provided along with the GeoNet dataset. However, no metadata beyond the raw images will be provided at test-time to evaluate the models, so the methods should be designed so as to take only image inputs during testing. 
+        </li>
+          
+        <li>
+          Since this is an unsupervised adaptation challenge, any method that make use of target labels for training their methods will be automatically disqualified from the competition. Only source labels are allowed for use in training, while unlabeled data can be leveraged from target. 
+        </li>
 
-        <li> The participants are allowed to use the metadata (except the labels!) provided along with the GeoNet dataset. However, no metadata beyond the raw images will be provided at test-time to evaluate the models, so the methods should be designed so as to use metadata only during training.  </li>
+        <li>
+          To ensure fairness across various resource and compute capabilities, we restrict the models to have a maximum of 300 million parameters in total. This is to help encourage methods that design novel algorithmic solutions as opposed to solely relying on scaling up training with larger models. If ensemble models are used, then the <i>total</i> number of parameters in all of the models should not exceed 300M. 
+        </li>
+        
+        <li>
+          If your method uses a pre-trained image generative model as part of the algorithm, then the parameters of the generative model will also be counted towards the 300M limit.
+          In case of multi-modal models like CLIP, the parameters from <i>both</i> the vision and language encoders will be counted towards the 300M limit.
+        </li>
+    </ul>
 
-        <li> The winners will be selected based on the leaderboard performance, with separate winners for the three challenge tracks.   </li>
+    <p>
+      <b>Winners and Reproduciblity:</b>
+    </p> 
+    <ul>
+
+      <li>
+        Each team is allowed a maximum of <b>3 submissions</b> to the leaderboard for the duration of the challenge.
+      </li>
+
+      <li> The winners will be selected based on the leaderboard performance, with separate winners for the three challenge tracks.   </li>
+
+      <li> The winners of the challenge will be invited to present their winning solution during the workshop. Additionally, they will also be required to submit a brief report summarizing their solution, as well as a working code and trained models that ensure reproduciblity. If the reproduced results do not match those on the leaderboard, the team will be concated for further clarifications. </li>
 
     </ul>
   </div>
@@ -288,7 +319,7 @@
         </li>
 
         <li>
-          <b>Leaderboard:</b> TBD!
+          <b>Leaderboard:</b> Coming soon! In the meanwhile, you can use the test split already provided along with the data to test your models and algorithms.
         </li>
     </ul>
   </div>
