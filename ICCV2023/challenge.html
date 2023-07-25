@@ -310,7 +310,7 @@
         
         <li>
           If your method uses a pre-trained image generative model as part of the algorithm, then the parameters of the generative model will also be counted towards the 300M limit.
-          In case of multi-modal models like CLIP, the parameters from <i>both</i> the vision and language encoders will be counted towards the 300M limit.
+          In case of multi-modal models like CLIP, the parameters from <i>both</i> the vision and language encoders will be counted towards the 300M limit. Note that both the generative model or the CLIP-like models cannot be trained/pre-trained on any additional data apart from ImageNet-1k or provided GeoNet dataset. 
         </li>
     </ul>
 
