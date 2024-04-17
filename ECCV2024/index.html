@@ -1,0 +1,401 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <meta name="keywords" content="eccv, workshop, computer vision, foundation models, machine learning">
+
+  <link rel="shortcut icon" href="static/img/site/favicon.png">
+
+  <title>GreenFOMO@ECCV2024</title>
+  <meta name="description" content="Green Foundation Models, ECCV 2024 Workshop">
+
+  <!--Open Graph Related Stuff-->
+  <meta property="og:title" content="Green Foundation Models"/>
+  <meta property="og:url" content="https://geonet-challenge.github.io"/>
+  <meta property="og:description" content="Green Foundation Models, ECCV 2024 Workshop"/>
+  <meta property="og:site_name" content="GreenFOMO Workshop"/>
+  <meta property="og:image" content="https://geonet-challenge.github.io/static/img/site/teaser.png"/>
+
+  <!--Twitter Card Stuff-->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Green Foundation Models Workshop"/>
+  <meta name="twitter:image" content="https://geonet-challenge.github.io/static/img/site/teaser.png">
+  <meta name="twitter:url" content="https://geonet-challenge.github.io"/>
+  <meta name="twitter:description" content="Green Foundation Models, ECCV 2024 Workshop"/>
+
+  <!-- CSS  -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+  <link rel="stylesheet" href="static/css/main.css" media="screen,projection">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+</head>
+
+  <body>
+
+<!-- <div class="top-strip"></div> -->
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/"></a>
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <div class="navbar-collapse collapse" id="navbar-main">
+      <ul class="nav navbar-nav">
+        <li><a href="#intro">About</a></li>
+        <li><a href="call.html">Call For Papers</a></li>
+        <!--<li><a href="accepted.html">Accepted Papers</a></li>-->
+        <li><a href="dates.html">Dates</a></li>
+        <li><a href="speakers.html">Invited Speakers</a></li>
+        <li><a href="program.html">Program</a></li>
+        <li><a href="organizers.html">Organizers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="container">
+  <div class="page-content">
+      <p><br /></p>
+
+<div class="containerheading">
+    <img src="static/img/site/teaser-image.jpg">
+</div>
+
+
+
+<hr />
+
+
+<!-- <br>
+  <center>
+  <h1 style="color:red"><a href="https://www.youtube.com/watch?v=gyJDGrbLknI">The <b>video recording</b> of this workshop is here!</a></h1>
+  </center>
+<br> -->
+
+<!-- <div class="row" id="intro">  
+    <div>  
+    <img src="static/img/site/intro_pic.png" style="width: 100%; height: auto;"/>
+  </div>
+</div> -->
+
+
+<!-- <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6"> 
+  <img src="static/img/site/a.png">
+</div>
+
+<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6"> 
+  <img src="static/img/site/b.png">
+</div>
+ -->
+
+
+<p><br /></p>
+<center>
+<div class="row" id="intro">
+  <div class="col-xs-12">
+    <h2><u>Introduction</u></h2>
+  </div>
+</div>
+</center>
+<div class="row">
+  <div class="col-xs-12">
+    <p style="color:brown;" align="center">
+      <!-- The workshop will be streamed live on zoom. You can join remotely at <a href="https://ucsd.zoom.us/j/99592876816" target="_blank">https://ucsd.zoom.us/j/99592876816.</a> -->
+      <!-- Due to some technical difficulty, we are unable to livestream the workshop. We deeply apologize for it. We will share the slides of the talk after the workshop. Thank you! -->
+    </p>
+    <p>
+    Foundation models generalize well to various downstream tasks, thanks to their 
+    web-scale pre-training, and have become a de-facto tool in pushing the frontiers of 
+    computer vision research. Despite the exciting progress, developing foundation 
+    models requires large compute resources, incurring heavy environmental costs. 
+    For instance, CLIP reports the use of hundreds of GPUs and LLaMA 2 family led to an 
+    emission of 539 tCO2eq, requiring about 27,000 trees in one year to capture the emissions.
+    <br></br>
+    To reduce computation and improve data efficiency, the computer vision community 
+    has explored efficient ways of adapting large foundation models for downstream tasks. 
+    For example, recent methods tune only a small set of learnable tokens 
+    (or <i>prompts</i>)  while keeping the weights of the pre-trained model frozen.
+    Compression methods also play a crucial role in optimizing the efficiency of 
+    foundation models by pruning or distillation. Very recent methods have pioneered 
+    in a new <i>training-free</i> paradigm by leveraging existing foundation models 
+    or an assembly of them, to address computer vision tasks such as image 
+    classification, 3D scene understanding, visual reasoning  <i>without</i> fine-tuning. 
+    Such research advancement is exciting and encouraging as it enables faster 
+    adaptation to downstream tasks without excessive computation, while mitigating 
+    the carbon footprint associated with resource-intensive processes.
+<br></br>
+    The <b>Green</b> <b>FO</b>undation <b>MO</b>dels (GreenFOMO) workshop aims 
+    to accelerate momentum around these emerging research topics, foster an inclusive 
+    research and innovation ecosystem involving small/medium sized practitioners 
+    in both academia and industry, and collectively making a green impact to society.
+    GreenFOMO promotes novel methodologies for efficient exploitation of 
+    foundation models and encourage applications of FOMOs in domains that induce green 
+    impacts, such as biodiversity, agricultural, food security, among others.
+<br></br>
+<b>Potential topics</b> include, but are not limited to:
+<li>Training-free methods</li>
+<li>Parameter efficient fine-tuning</li>
+<li>Model compression and pruning</li>
+<li>Token reduction</li>
+<li>Light-weight models</li>
+<li>Uni-(multi-)modal reasoning</li>
+<li>Continual/transfer learning</li>
+<li>Novel applications for sustainability and biodiversity</li>
+
+</p>
+
+
+  </div>
+</div>
+
+
+<!-- <div class="row"> -->
+      <!-- <div class="col-md-24">
+        <figure>
+          <img src="static/img/site/intro_pic.png" >
+          </figure>
+      </div> -->
+      <!-- <div class="col-md-6">
+        <img src="static/img/site/identification.png" height="180px"/>
+        <p>Fine-grained 3D Object Identification</p>
+      </div> -->
+    <!-- </div> -->
+
+<p><br /></p>
+<center>
+<div class="row" id="speakers">
+  <div class="col-xs-12">
+    <h2><u>Invited Speakers</u></h2>
+  </div>
+</div>
+</center>
+<p><br /></p>
+<div class="row">
+    <div class="col-md-2">
+      <a href="https://www.ranjaykrishna.com/index.html" target="_blank"><img class="people-pic" style="float:left;margin-right:50px;" src="static/img/people/ranjay-krishna-round.png" /></a>
+    </div>
+    <div class="col-md-10">
+      <p>
+        <b><a href="https://www.ranjaykrishna.com/index.html">Dr. Ranjay Krishna</a></b> is an Assistant Professor at the Paul G. Allen School of Computer Science & Engineering. His research lies at the intersection of computer vision and human computer interaction. This research has received best paper, outstanding paper, and orals at CVPR, ACL, CSCW, NeurIPS, UIST, and ECCV, and has been reported by Science, Forbes, the Wall Street Journal, and PBS NOVA. His research has been supported by Google, Amazon, Cisco, Toyota Research Institute, NSF, ONR, and Yahoo. He holds a bachelor's degree in Electrical & Computer Engineering and in Computer Science from Cornell University, a master's degree in Computer Science from Stanford University and a Ph.D. in Computer Science from Stanford University.
+      </p>
+    </div>
+  </div>
+  
+  <p><br /></p>
+  
+  <div class="row">
+    <div class="col-md-2">
+      <a href="#speakers" target="_blank"><img class="people-pic" style="float:left;margin-right:50px;" src="static/img/people/eric-schulz-round.png"/></a>
+    </div>
+    <div class="col-md-10">
+      <p>
+        <b><a href="#speakers">Dr. Eric Schulz</a></b> 
+        is an incoming professor at LMU and the director of the Institute of Human Centered 
+        AI at Helmholtz Munich. He finished PhD at UCL in 2017 working on generalization and 
+        exploration in reinforcement learning. From 2017 to 2019, he was a Data Science 
+        Postdoctoral Fellow at Harvard University, where he worked on computational models of 
+        learning and decision making and from 2020 to 2023 he was a Max Planck Independent 
+        Group Leader at the MPI for Biological Cybernetics. 
+      </p>
+    </div>
+  </div>
+  <p><br /></p>
+  
+  <div class="row">
+    <div class="col-md-2">
+      <a href="https://faculty.cc.gatech.edu/~judy/" target="_blank"><img class="people-pic" style="float:left;margin-right:50px;" src="static/img/people/judy-hoffman-round.png" /></a>
+    </div>
+    <div class="col-md-10">
+      <p>
+        <b><a href="https://faculty.cc.gatech.edu/~judy/"> Dr. Judy Hoffman</a></b> Assistant Professor in the School of Interactive Computing at Georgia Tech and a member of the Machine Learning Center. Research interests include computer vision, machine learning, domain adaptation, robustness, and fairness. Prior to joining Georgia Tech, Dr. Hoffman was a Visiting Research Scientist at Facebook AI Research and a postdoctoral scholar at Stanford University and UC Berkeley. She received her PhD from UC Berkeley, EECS in 2016 where she was a member of BAIR and BDD.
+      </p>
+    </div>
+  </div>
+</div>
+
+<p><br /></p>
+
+
+<center>
+<div class="row" id="organizers">
+  <div class="col-xs-12">
+    <h2><u>Organizers</u></h2>
+  </div>
+</div>
+</center>
+
+<center>
+    <p><br /></p>
+    <div class="row">
+      <div class="col-xs-12">
+    
+        <div class="col-xs-4">
+          <a href="https://www.yimingwang.it/" target="_blank">
+            <img class="people-pic" src="static/img/people/yiming-round.png" />
+          </a>
+          <div class="people-name">
+            <a href="https://www.yimingwang.it/" target="_blank">Yiming Wang</a>
+            <h6>Fondazione Bruno Kessler</h6>
+          </div>
+        </div>
+        <div class="col-xs-4">
+          <a href="https://roysubhankar.github.io/" target="_blank">
+            <img class="people-pic" src="static/img/people/subhankar-round.png" />
+          </a>
+          <div class="people-name">
+            <a href="https://roysubhankar.github.io/" target="_blank">Subhankar Roy</a>
+            <h6>Independent Researcher</h6>
+          </div>
+        </div>
+        <div class="col-xs-4">
+          <a href="https://mancinimassimiliano.github.io/" target="_blank">
+            <img class="people-pic" src="static/img/people/massimiliano-round.png" />
+          </a>
+          <div class="people-name">
+            <a href="https://mancinimassimiliano.github.io/" target="_blank">Massimiliano Mancini</a>
+            <h6>University of Trento</h6>
+          </div>
+        </div>
+      </div>
+      <br>
+    </div>
+    <p><br /></p>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="col-xs-3">
+            <a href="https://davidetalon.github.io/" target="_blank">
+            <img class="people-pic" src="static/img/people/davide-round.png" />
+            </a>
+            <div class="people-name">
+            <a href="https://davidetalon.github.io/" target="_blank">Davide Talon</a>
+            <h6>Fondazione Bruno Kessler</h6>
+            </div>
+        </div>
+        <div class="col-xs-3">
+            <a href="https://kaiyangzhou.github.io/" target="_blank">
+            <img class="people-pic" src="static/img/people/kaiyang-round.png" />
+            </a>
+            <div class="people-name">
+            <a href="https://kaiyangzhou.github.io/" target="_blank">Kaiyang Zhou</a>
+            <h6>Hong Kong Baptist University</h6>
+            </div>
+        </div>
+        <div class="col-xs-3">
+            <a href="https://enzotarta.github.io/" target="_blank">
+            <img class="people-pic" src="static/img/people/enzo-round.png" />
+            </a>
+            <div class="people-name">
+            <a href="https://enzotarta.github.io/" target="_blank">Enzo Tartaglione</a>
+            <h6>Télécom Paris, Institut Polytechnique de Paris</h6>
+            </div>
+        </div>
+    
+        <div class="col-xs-3">
+            <a href="https://www.iro.umontreal.ca/~agrawal/" target="_blank">
+            <img class="people-pic" src="static/img/people/aishwarya-round.png" />
+            </a>
+            <div class="people-name">
+            <a href="https://www.iro.umontreal.ca/~agrawal/" target="_blank">Aishwarya Agrawal</a>
+            <h6>University of Montreal, Mila</h6>
+            </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    <p><br /></p>
+    
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="col-xs-4">
+            <a href="https://www.microsoft.com/en-us/research/people/gtadesse/" target="_blank">
+            <img class="people-pic" src="static/img/people/girmaw-round.png" />
+            </a>
+            <div class="people-name">
+            <a href="https://www.microsoft.com/en-us/research/people/gtadesse/" target="_blank">Girmaw Abebe Tadesse</a>
+            <h6>Microsoft AI for Good Research Lab</h6>
+            </div>
+        </div>
+        <div class="col-xs-4">
+          <a href="https://intelligolabs.net/team/marco-cristani/" target="_blank">
+            <img class="people-pic" src="static/img/people/marco-round.png" />
+          </a>
+          <div class="people-name">
+            <a href="https://intelligolabs.net/team/marco-cristani/" target="_blank">Marco Cristani</a>
+            <h6>University of Verona</h6>
+          </div>
+        </div>
+    
+        <div class="col-xs-4">
+          <a href="https://www.eml-unitue.de/people/zeynep-akata" target="_blank">
+            <img class="people-pic" src="static/img/people/zeynep-round.png" />
+          </a>
+          <div class="people-name">
+            <a href="https://www.eml-unitue.de/people/zeynep-akata" target="_blank">Zeynep Akata</a>
+            <h6>Technical University of Munich, Helmholtz Munich</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <p><br /></p>
+</center>
+
+<center>
+<div class="row" id="contact">
+  <div class="col-xs-12">
+    <h2><u>Contact</u></h2>
+  </div>
+</div>
+</center>
+<div class="row">
+  <div class="col-xs-12">
+    <p>
+      To contact the organizers please use <b>greenfomo*at*googlegroups*dot*com</b>
+    </p>
+  </div>
+</div>
+<p><br /></p>
+
+<hr />
+
+
+
+
+<div class="row">
+  <div class="col-xs-12">
+    <h2>Acknowledgments</h2>
+  </div>
+</div>
+<p><a name="/acknowledgements"></a></p>
+<div class="row">
+  <div class="col-xs-12">
+    <p>
+      Thanks to <span style="color:#1a1aff;font-weight:400;"> <a href="https://geonet-challenge.github.io/ICCV2023/index.html">Robust Computer Vision Across Geographies Workshop</a></span> for the webpage format.
+    </p>
+  </div>
+</div>
+
+      </div>
+    </div>
+
+  </body>
+</html>
