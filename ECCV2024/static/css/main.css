@@ -222,3 +222,11 @@ body {
         float: none;
         margin: 0 auto;
 }
+
+.badge {
+  background-color: green;
+  color: white;
+  padding: 4px 8px;
+  text-align: center;
+  border-radius: 5px;
+}
